@@ -6,8 +6,16 @@
 	<p id="demo"></p>
 	<form id="myForm">
 		<input type="text" name="myName" id="myName">
-		<input type="button" onclick="" value="click me">
+		<input type="button" onclick="theForm.showMyName()" value="click me">
 	</form>
-	<script type="text/javascript"></script>
+	<script type="text/javascript">
+		// Create an object
+		const theForm = {};
+		theForm.my_name = document.getElementById("myForm").elements.namedItem("myName").value; // object property my_name
+		// showMyName method
+		theForm.showMyName = function() {
+			console.log(this.my_name);
+		}
+	</script>
 </body>
 </html>
